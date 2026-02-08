@@ -1,11 +1,21 @@
-import Footer from "./Footer";
-import HeroSection from "./HeroSection";
-import Navbar from "./Navbar";
-import ServicesOverview from "./ServicesOverview";
+import HeroSection from "./Home/HeroSection";
+import TestimonialsOverview from "./Home/TestimonialsOverview";
+import AIAgent from "./Home/AIAgent";
+import Layout from "./Layout/Layout";
+import Steps from "./Home/Steps";
+import Integration from "./Home/Integration";
+import ExperienceSection from "./Home/ExperienceSection";
+import Expertise from "./Home/Expertise";
+import FAQ from "./Home/FAQ";
 export {
-    Navbar,
     HeroSection,
-    Footer,
-    ServicesOverview
+    TestimonialsOverview,
+    AIAgent,
+    Layout,
+    Steps,
+    Integration,
+    ExperienceSection,
+    Expertise,
+    FAQ
     }
     

@@ -1,13 +1,17 @@
-import {  Footer, HeroSection, ServicesOverview  } from "../Components";
+import {   HeroSection,Expertise, ExperienceSection,TestimonialsOverview, AIAgent, Steps, Integration, FAQ } from "../Components";
 import React from 'react'
 
 function Home() {
   return (
-    <div>
-        
+    <div>       
         <HeroSection />
-        <ServicesOverview />
-        <Footer />  
+        <Steps />
+        <AIAgent />
+        <ExperienceSection />
+        <Integration />
+        <Expertise />
+        <TestimonialsOverview />
+        <FAQ />
     </div>
   )
 }

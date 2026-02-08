@@ -1,0 +1,267 @@
+import React, { useEffect, useRef } from 'react';
+import RevealAnimation from '../animation/RevealAnimation';
+import { Brain, Sparkles, Bot, Network, Eye, Cloud, BarChart3, Shield, Cpu, Glasses, Link2 } from 'lucide-react';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { useTheme } from '@/context/ThemeContext';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+const expertiseData = [
+  {
+    id: 1,
+    icon: Brain,
+    title: 'Artificial Intelligence',
+    description: 'AI only creates value when it fits into how an organization actually works. We help enterprises apply intelligence in ways that improve decisions, reduce manual effort, and support operations at scale.',
+    size: 'normal',
+    theme: 'light',
+  },
+  {
+    id: 2,
+    icon: Sparkles,
+    title: 'Generative AI',
+    description: 'Gen AI is most useful when it becomes part of everyday work. We integrate it into internal knowledge systems, customer interactions, and operational tools, with the controls and governance enterprises expect.',
+    size: 'tall',
+    theme: 'light',
+  },
+  {
+    id: 3,
+    icon: Bot,
+    title: 'Agentic AI',
+    description: 'We work with organizations exploring autonomous systems, helping them introduce AI agents that can take action across processes while remaining transparent, supervised, and accountable.',
+    size: 'wide-tall',
+    theme: 'dark',
+  },
+  {
+    id: 4,
+    icon: Network,
+    title: 'Machine Learning',
+    description: 'ML in enterprise environments is less about experimentation and more about reliability. We develop models that adapt over time and continue to perform as data, demand, and conditions change.',
+    size: 'normal',
+    theme: 'light',
+  },
+  {
+    id: 5,
+    icon: Eye,
+    title: 'Computer Vision',
+    description: 'In environments where speed and accuracy matter, vision-based systems can remove friction. We apply computer vision to automate inspection, monitoring, and visual analysis across real operational settings.',
+    size: 'wide',
+    theme: 'blue',
+  },
+  {
+    id: 6,
+    icon: Cloud,
+    title: 'Cloud',
+    description: 'Cloud modernization is not a lift-and-shift exercise. We help enterprises rethink how applications and infrastructure are structured so systems remain secure, resilient, and ready to scale over time.',
+    size: 'normal',
+    theme: 'light',
+  },
+  {
+    id: 7,
+    icon: BarChart3,
+    title: 'Data Science and Analytics',
+    description: 'Data only becomes useful when teams can rely on it. We design data foundations that support analytics and insight across functions, without adding complexity or dependency.',
+    size: 'tall',
+    theme: 'light',
+  },
+  {
+    id: 8,
+    icon: Shield,
+    title: 'Cybersecurity',
+    description: 'Security is treated as a design constraint, not a checklist item. Our systems account for governance, compliance, and risk from the earliest architectural decisions.',
+    size: 'normal',
+    theme: 'dark',
+  },
+  {
+    id: 9,
+    icon: Cpu,
+    title: 'IoT',
+    description: 'Connected devices generate value only when their data is usable. We help organizations bring physical systems into their digital landscape, improving visibility and control across operations.',
+    size: 'normal',
+    theme: 'light',
+  },
+  {
+    id: 10,
+    icon: Glasses,
+    title: 'AR/VR',
+    description: 'Immersive technologies work best when they solve specific problems. We use AR and VR to support training, simulation, and remote collaboration in enterprise environments.',
+    size: 'wide',
+    theme: 'light',
+  },
+  {
+    id: 11,
+    icon: Link2,
+    title: 'Blockchain',
+    description: 'Distributed systems are useful where trust must be shared. We apply blockchain selectively, focusing on traceability, data integrity, and controlled exchange in multi-party ecosystems.',
+    size: 'normal',
+    theme: 'light',
+  },
+];
+
+function Expertise() {
+  const sectionRef = useRef(null);
+  const { isDarkMode, setIsDarkMode } = useTheme();
+
+  useEffect(() => {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create scroll trigger for expertise section
+    const trigger = ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: 'top top',
+      end: 'top 3%',
+      onEnter: () => {
+        gsap.to('body', {
+          backgroundColor: '#000000',
+          color: '#ffffff',
+          duration: 0.8,
+          ease: 'power2.inOut',
+        });
+        setIsDarkMode(true);
+      },
+      onEnterBack: () => {
+        gsap.to('body', {
+          backgroundColor: '#ffffff',
+          color: '#000000',
+          duration: 0.8,
+          ease: 'power2.inOut',
+        });
+        setIsDarkMode(false);
+      },
+      markers: false,
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }, [setIsDarkMode]);
+
+  return (
+    <section ref={sectionRef} className="py-[80px] md:py-[120px] lg:py-[156px] bg-transparent relative overflow-hidden transition-colors duration-700">
+      {/* Background elements */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+
+      <div className="main-container relative z-10">
+        {/* Header */}
+        <RevealAnimation delay={0.1}>
+          <div className="text-center space-y-6 mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-xs font-semibold text-blue-700 dark:text-blue-300 tracking-widest uppercase border border-blue-100 dark:border-blue-900">
+              Technical Expertise
+            </span>
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Deep Technical Expertise,
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                  Supporting Modern Systems
+                </span>
+              </h2>
+              <p className="mx-auto max-w-[700px] text-base md:text-lg text-gray-600 dark:text-gray-400">
+                We deliver enterprise-grade solutions across AI, cloud, security, and emerging technologies that drive measurable business outcomes.
+              </p>
+            </div>
+          </div>
+        </RevealAnimation>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[220px] mx-4 md:mx-8 lg:mx-12">
+          {expertiseData.map((item, index) => {
+            const Icon = item.icon;
+            const delay = 0.2 + index * 0.05;
+
+            return (
+              <RevealAnimation key={item.id} delay={delay} direction="up" offset={40}>
+                <ExpertiseCard item={item} Icon={Icon} />
+              </RevealAnimation>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const ExpertiseCard = ({ item, Icon }) => {
+  const getThemeClasses = () => {
+    switch (item.theme) {
+      case 'dark':
+        return 'bg-gradient-to-br from-gray-900 to-black text-white border-gray-800';
+      case 'blue':
+        return 'bg-gradient-to-br from-blue-600 to-blue-700 text-white border-blue-500';
+      default:
+        return 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-gray-200 dark:border-gray-800';
+    }
+  };
+
+  const getSizeClasses = () => {
+    switch (item.size) {
+      case 'wide-tall':
+        return 'md:col-span-2 md:row-span-2';
+      case 'wide':
+        return 'md:col-span-2 md:row-span-1';
+      case 'tall':
+        return 'md:col-span-1 md:row-span-2';
+      case 'normal':
+      default:
+        return 'md:col-span-1 md:row-span-1';
+    }
+  };
+
+  const getIconBgClasses = () => {
+    switch (item.theme) {
+      case 'dark':
+        return 'bg-white/10';
+      case 'blue':
+        return 'bg-white/20';
+      default:
+        return 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900';
+    }
+  };
+
+  const getIconColorClasses = () => {
+    switch (item.theme) {
+      case 'dark':
+      case 'blue':
+        return 'text-white';
+      default:
+        return 'text-blue-600';
+    }
+  };
+
+  return (
+    <div className={`${getSizeClasses()} relative h-full rounded-2xl border p-2`}>
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+      />
+      <div
+        className={`
+          relative h-full flex flex-col justify-between rounded-xl p-6
+          ${getThemeClasses()}
+          overflow-hidden
+        `}
+      >
+        <div className="relative z-10 space-y-4">
+          {/* Icon */}
+          <div className={`w-12 h-12 rounded-xl ${getIconBgClasses()} flex items-center justify-center`}>
+            <Icon className={`w-6 h-6 ${getIconColorClasses()}`} />
+          </div>
+
+          {/* Content */}
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
+            <p className={`text-xs leading-relaxed ${item.theme === 'dark' || item.theme === 'blue' ? 'text-gray-300' : 'text-gray-600 dark:text-gray-400'}`}>
+              {item.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Expertise;

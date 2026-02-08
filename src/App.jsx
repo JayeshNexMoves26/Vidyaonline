@@ -1,9 +1,10 @@
 import { ReactLenis } from "lenis/react"
 import gsap from "gsap";
 import { useRef, useEffect } from "react"
-import {Navbar} from "./Components"
 import  Home  from "./Pages/Home";
-
+import { Layout } from "./Components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
 function App() {
    const lenisRef = useRef()
   
@@ -18,11 +19,16 @@ function App() {
   }, [])
   
   return (
-    <>
+    <ThemeProvider>
+      <BrowserRouter>
         <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
-        <Navbar />
-        <Home />
-    </>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

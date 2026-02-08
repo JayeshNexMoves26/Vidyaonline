@@ -134,3 +134,35 @@
   will-change: transform;
   transition: transform 0.3s ease-out;
 }
+body{
+  overflow-x: hidden;
+}
+
+/* Footer Animations */
+@keyframes footerLeft {
+  from {
+    transform: translate(4%, 10%) skew(0deg);
+  }
+  to {
+    transform: translate(-10%, 20%) skew(-60deg);
+  }
+}
+
+@keyframes footerRight {
+  from {
+    transform: translate(10%, 10%) skew(0deg);
+  }
+  to {
+    transform: translate(20%, 35%) skew(80deg);
+  }
+}
+
+@layer utilities {
+  .animate-footer-left {
+    animation: footerLeft 6s ease-in-out infinite alternate;
+  }
+
+  .animate-footer-right {
+    animation: footerRight 7s ease-in-out infinite alternate;
+  }
+}
