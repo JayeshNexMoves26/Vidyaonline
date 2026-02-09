@@ -46,18 +46,19 @@ function FAQ() {
       <div className="main-container relative z-10">
         {/* Header */}
         <RevealAnimation delay={0.1}>
-          <div className="text-center space-y-6 mb-16">
+          <div className="mx-18 text-start space-y-6 mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
               FAQ
             </h2>
-            <p className="mx-auto max-w-[600px] text-base md:text-lg text-gray-400">
+            <p className="mx-0
+             max-w-[600px] text-base md:text-lg text-gray-400">
               Find answers to common questions about our AI and technology solutions.
             </p>
           </div>
         </RevealAnimation>
 
         {/* FAQ Accordion */}
-        <div className="mx-auto max-w-[800px]">
+        <div className="mx-18 max-w-[800px]">
           <RevealAnimation delay={0.2}>
             <Accordion type="single" collapsible className="space-y-3">
               {faqData.map((item, index) => (
