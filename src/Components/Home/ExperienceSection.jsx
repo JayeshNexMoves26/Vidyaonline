@@ -109,15 +109,12 @@ const ExperienceSection = () => {
   }, [experienceCards.length]);
 
   return (
-    <section className="py-[80px] md:py-[120px] lg:py-[17px] relative overflow-hidden bg-transparent">
-      {/* Subtle background elements */}
-      <div>
-      
-        {/* Scrolling Container */}
-        <div
-          ref={scrollContainerRef}
-          className="w-full overflow-hidden -mx-6 px-6"
-        >
+    <section className="relative bg-transparent overflow-hidden flex items-center" style={{ minHeight: '710px' }}>
+      {/* Scrolling Container */}
+      <div
+        ref={scrollContainerRef}
+        className="w-full overflow-hidden"
+      >
           <div
             ref={contentRef}
             className="flex gap-0.5 w-fit"
@@ -133,15 +130,14 @@ const ExperienceSection = () => {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
 const ExperienceCard = ({ card }) => {
   return (
     <div
-      className="flex-shrink-0 w-[580px] h-[710px] rounded-lg overflow-hidden group transition-all duration-500 hover:shadow-2xl"
+      className="flex-shrink-0 w-[580px] h-[710px] overflow-hidden rounded-lg group transition-all duration-500 hover:shadow-2xl"
       style={{
         background: 'linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%)',
         border: '1px solid rgba(255, 255, 255, 0.08)',

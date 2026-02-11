@@ -4,7 +4,7 @@ import IntegrationCircle from './IntegrationCircle';
 
 const Integration = () => {
   return (
-    <section className="py-[80px] md:h-[750px] md:py-[120px] bg-gradient-to-b lg:py-[156px] xl:h-[956px]">
+    <section className="py-[8px] md:h-[750px] md:py-[12px] bg-gradient-to-b lg:py-[15px] xl:h-[40rem]">
       <RevealAnimation delay={0.1}>
         <div className="relative mx-auto h-[620px] max-w-[1600px] overflow-hidden">
           <div className="main-container lp:pb-4 relative z-30">
@@ -30,15 +30,15 @@ const Integration = () => {
               </div>
 
               <RevealAnimation delay={0.5} offset={10}>
-                <div className="text-center">
-                  <button className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                    <span>View our case studies</span>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="1"/>
-                      <circle cx="19" cy="12" r="1"/>
-                      <circle cx="5" cy="12" r="1"/>
-                    </svg>
-                  </button>
+                <div className="flex items-center justify-center gap-4">
+                  <LinkButton
+                    href="#"
+                    className="rounded-xl  bg-black text-white hover:shadow-lg hover:scale-105 transition-all duration-300 dark:bg-white dark:text-black">
+                    <span className="flex items-center gap-2 font-semibold">
+                      View our case studies
+                      
+                    </span>
+                  </LinkButton>
                 </div>
               </RevealAnimation>
             </div>

@@ -111,9 +111,9 @@ const TestimonialsOverview = () => {
                   <div>
                     <LinkButton
                       href="/case-studies"
-                      className="inline-flex items-center px-8 py-4 bg-transparent text-gray-900 dark:text-white font-semibold rounded-full border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white transition-all duration-300 hover:shadow-lg"
+                      className="bg-transparent text-gray-900 dark:text-white rounded-xl border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white transition-all duration-300 hover:shadow-lg"
                     >
-                      View case studies
+                      <span className="font-semibold">View case studies</span>
                     </LinkButton>
                   </div>
                 </RevealAnimation>
