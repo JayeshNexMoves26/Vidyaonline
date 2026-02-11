@@ -2,9 +2,10 @@ import React from 'react'
 import { ArrowRight, CheckCircle2, TrendingUp, Users, Building2 } from 'lucide-react'
 import RevealAnimation from '../animation/RevealAnimation'
 import SpotLight from '.././ui/SpotLight'
+import LinkButton from '../ui/button/LinkButton'
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-white dark:bg-gray-950 pt-32 pb-20 px-4">
+    <section className="relative min-h-screen w-full bg-white dark:bg-gray-950 pt-32 pb-20 px-4">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90" />
@@ -46,13 +47,18 @@ function HeroSection() {
             {/* CTA Buttons */}
             <RevealAnimation direction="up" delay={0.6} offset={60}>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="group px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all duration-200 flex items-center justify-center gap-2">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200">
-                  View Our Work
-                </button>
+                <LinkButton
+                  href="#"
+                  className="bg-blue-600 text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700">
+                  <span className="flex items-center gap-2 font-semibold">
+                    Get Started
+                  </span>
+                </LinkButton>
+                <LinkButton
+                  href="#"
+                  className="bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+                  <span className="font-semibold">View Our Work</span>
+                </LinkButton>
               </div>
             </RevealAnimation>
 

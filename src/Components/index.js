@@ -9,6 +9,7 @@ import Expertise from "./Home/Expertise";
 import FAQ from "./Home/FAQ";
 import CTA from "./Home/CTA";
 import CaseStudies from "./Home/CaseStudies";
+import Sectors from "./Home/Sectors";
 export {
     HeroSection,
     TestimonialsOverview,
@@ -21,4 +22,5 @@ export {
     FAQ,
     CTA,
     CaseStudies,
+    Sectors
 }

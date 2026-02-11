@@ -266,7 +266,7 @@ function FAQ() {
                   <RevealAnimation delay={1.0}>
                     <button
                       type="submit"
-                      className="w-full px-6 py-5 bg-white text-blue-900 text-sm font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                      className="w-full px-6 py-3 text-lg uppercase bg-white text-blue-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                     >
                       Submit
                     </button>

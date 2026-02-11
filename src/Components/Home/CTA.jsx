@@ -7,7 +7,7 @@ import nsImg337 from '../../assets/ns-img-337.svg';
 
 const CTA = () => {
   return (
-    <section className="py-16 px-18 lg:py-22 xl:py-28">
+    <section className=" relative py-16 px-18 lg:py-22 xl:py-28">
       <div className="main-container">
         <RevealAnimation delay={0.1}>
           <div className="relative z-0 mx-auto flex flex-col items-center justify-center space-y-8 overflow-hidden rounded-4xl bg-gray-50 px-5 py-14 text-center md:py-18 lg:py-22">
@@ -50,9 +50,9 @@ const CTA = () => {
               <RevealAnimation delay={0.3} direction="up" offset={30}>
                 <LinkButton
                   href="/contact"
-                  className="inline-flex items-center justify-center px-10 py-4 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
+                  className="bg-blue-600 text-white text-lg rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
                 >
-                  Complete Your Success Story
+                  <span className="font-semibold">Complete Your Success Story</span>
                 </LinkButton>
               </RevealAnimation>
             </div>
