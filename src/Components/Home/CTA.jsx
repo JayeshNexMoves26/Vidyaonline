@@ -7,7 +7,7 @@ import nsImg337 from '../../assets/ns-img-337.svg';
 
 const CTA = () => {
   return (
-    <section className=" relative py-16 px-18 lg:py-22 xl:py-28">
+    <section className=" relative py-16 px-4 md:px-24 lg:py-22 xl:py-28">
       <div className="main-container">
         <RevealAnimation delay={0.1}>
           <div className="relative z-0 mx-auto flex flex-col items-center justify-center space-y-8 overflow-hidden rounded-4xl bg-gray-50 px-5 py-14 text-center md:py-18 lg:py-22">

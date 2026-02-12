@@ -7,7 +7,7 @@ const Integration = () => {
     <section className="py-[8px] md:h-[750px] md:py-[12px] bg-gradient-to-b lg:py-[15px] xl:h-[40rem]">
       <RevealAnimation delay={0.1}>
         <div className="relative mx-auto h-[620px] max-w-[1600px] overflow-hidden">
-          <div className="main-container lp:pb-4 relative z-30">
+          <div className="main-container px-2 lg:pb-4 relative z-30">
             <div className="mt-[180px] space-y-[76px] md:mt-[200px] lg:mt-[280px]">
               <div className="space-y-4 text-center">
                 <RevealAnimation delay={0.2}>
@@ -17,7 +17,7 @@ const Integration = () => {
                 </RevealAnimation>
                 <div className="space-y-3">
                   <RevealAnimation delay={0.3}>
-                    <h2 className="text-4xl md:text-5xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h2 className="text-3xl md:text-5xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Trusted by the <span className="text-blue-500">Disruptors</span> and Fortune 500s
                     </h2>
                   </RevealAnimation>

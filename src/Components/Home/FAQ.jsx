@@ -57,19 +57,19 @@ function FAQ() {
   };
 
   return (
-    <section className="pb-[150px] bg-black dark:bg-black relative">
+    <section className="pb-12 sm:pb-20 md:pb-32 lg:pb-[150px] bg-black dark:bg-black relative">
       {/* Background elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-10 sm:top-20 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 sm:bottom-20 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
 
       <div className="main-container relative z-10">
         {/* Header */}
         <RevealAnimation delay={0.1}>
-          <div className="mx-18 text-start space-y-6 mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+          <div className="px-4 sm:px-6 md:px-8 lg:mx-18 text-start space-y-4 sm:space-y-6 mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
               FAQ
             </h2>
-            <p className="mx-0 max-w-[600px] text-base md:text-lg text-gray-400">
+            <p className="mx-0 max-w-full sm:max-w-[600px] text-sm sm:text-base md:text-lg text-gray-400">
               Find answers to common questions about our AI and technology solutions.
             </p>
           </div>
@@ -78,24 +78,24 @@ function FAQ() {
         {/* Two Column Layout - FAQ Left, Form Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* FAQ Accordion - Left Side */}
-          <div className="mx-18 max-w-[800px]">
+          <div className="px-4 sm:px-6 md:px-8 lg:mx-18 max-w-full lg:max-w-[800px]">
             <RevealAnimation delay={0.2}>
-              <Accordion type="single" collapsible className="space-y-3">
+              <Accordion type="single" collapsible defaultValue="1" className="space-y-2 sm:space-y-3">
                 {faqData.map((item, index) => (
                   <AccordionItem
                     key={item.id}
                     value={item.id}
-                    className="border border-white/20 rounded-4xl px-6 py-4 transition-colors duration-300 data-[state=open]:border-white/40"
+                    className="border border-white/20 rounded-2xl sm:rounded-3xl md:rounded-4xl px-4 sm:px-5 md:px-6 py-3 sm:py-4 transition-colors duration-300 data-[state=open]:border-white/40"
                   >
                     <AccordionTrigger className="hover:no-underline group">
-                      <span className="text-left text-lg font-semibold text-white transition-colors">
+                      <span className="text-left text-sm sm:text-base md:text-lg font-semibold text-white transition-colors">
                         {item.question}
                       </span>
                     </AccordionTrigger>
-                    <AccordionContent className="pt-4">
+                    <AccordionContent className="pt-3 sm:pt-4">
                       {/* Fading line */}
-                      <div className="mb-4 h-px bg-gradient-to-r from-white/30 via-white/20 to-transparent" />
-                      <p className="text-gray-400 text-base leading-relaxed">
+                      <div className="mb-3 sm:mb-4 h-px bg-gradient-to-r from-white/30 via-white/20 to-transparent" />
+                      <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed">
                         {item.answer}
                       </p>
                     </AccordionContent>
@@ -106,26 +106,26 @@ function FAQ() {
           </div>
 
           {/* Contact Form - Right Side */}
-          <div className="mx-18 absolute top-0 right-0 w-[46rem]">
+          <div className="px-4 sm:px-6 md:px-8 lg:mx-18 lg:sticky lg:top-24 lg:h-fit">
             <RevealAnimation delay={0.3}>
-              <div className="rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-950/50 to-slate-900/50 p-6 md:p-8 backdrop-blur-xl sticky top-24">
+              <div className="rounded-2xl sm:rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-950/50 to-slate-900/50 p-4 sm:p-6 md:p-8 backdrop-blur-xl">
                 {/* Form Header */}
                 <RevealAnimation delay={0.4}>
-                  <div className="mb-6 space-y-3">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-3">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                       Didn't Find What You Were Looking For?
                     </h3>
-                    <p className="text-sm md:text-base text-gray-300">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">
                       We've got more answers waiting for you! If your question didn't make the list, don't hesitate to reach out.
                     </p>
                   </div>
                 </RevealAnimation>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-5">
                   {/* Name and Designation Row */}
                   <RevealAnimation delay={0.5}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {/* Name */}
                       <div>
                         <label className="block text-xs font-semibold text-white mb-2">
@@ -162,7 +162,7 @@ function FAQ() {
 
                   {/* Contact and Email Row */}
                   <RevealAnimation delay={0.6}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {/* Contact Number */}
                       <div>
                         <label className="block text-xs font-semibold text-white mb-2">
@@ -235,9 +235,9 @@ function FAQ() {
 
                   {/* NDA Protection */}
                   <RevealAnimation delay={0.8}>
-                    <div className="flex items-center gap-2 rounded-lg bg-amber-500/20 border border-amber-500/40 px-3 py-2">
-                      <Shield className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                      <span className="text-xs font-medium text-amber-100">
+                    <div className="flex items-center gap-2 rounded-lg bg-amber-500/20 border border-amber-500/40 px-2 sm:px-3 py-1.5 sm:py-2">
+                      <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 flex-shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-medium text-amber-100">
                         Fast 2-minute response, fully <span className="font-bold">NDA-protected</span>.
                       </span>
                     </div>
@@ -245,8 +245,8 @@ function FAQ() {
 
                   {/* Captcha */}
                   <RevealAnimation delay={0.9}>
-                    <div className="flex items-center gap-3 py-3 border-b border-blue-400/30">
-                      <span className="text-white text-sm font-semibold">6 + 6 =</span>
+                    <div className="flex items-center gap-2 sm:gap-3 py-2 sm:py-3 border-b border-blue-400/30">
+                      <span className="text-white text-xs sm:text-sm font-semibold">6 + 6 =</span>
                       <input
                         {...register('captcha', {
                           required: 'Please verify',
@@ -254,10 +254,10 @@ function FAQ() {
                         })}
                         type="text"
                         placeholder=" "
-                        className="w-16 bg-transparent border-2 border-blue-400/50 rounded-lg px-3 py-4 text-white text-sm text-center focus:border-blue-400 focus:outline-none transition-colors"
+                        className="w-12 sm:w-16 bg-transparent border-2 border-blue-400/50 rounded-lg px-2 sm:px-3 py-2 sm:py-4 text-white text-xs sm:text-sm text-center focus:border-blue-400 focus:outline-none transition-colors"
                       />
                       {errors.captcha && (
-                        <p className="text-red-400 text-xs">{errors.captcha.message}</p>
+                        <p className="text-red-400 text-[10px] sm:text-xs">{errors.captcha.message}</p>
                       )}
                     </div>
                   </RevealAnimation>
@@ -266,7 +266,7 @@ function FAQ() {
                   <RevealAnimation delay={1.0}>
                     <button
                       type="submit"
-                      className="w-full px-6 py-3 text-lg uppercase bg-white text-blue-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                      className="w-full px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base md:text-lg uppercase bg-white text-blue-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                     >
                       Submit
                     </button>

@@ -110,19 +110,19 @@ const Steps = () => {
         <div className="flex flex-wrap items-start justify-center gap-y-[58px] lg:flex-nowrap lg:gap-x-[58px] lg:gap-y-0">
           {/* heading  */}
           <RevealAnimation delay={0.1}>
-            <h2 className="top-[156px] max-w-[44rem] text-center text-4xl font-semibold md:text-5xl lg:text-6xl leading-[0.9] lg:sticky lg:text-left text-gray-900 dark:text-white">
+            <h2 className="lg:top-[156px] max-w-2xl text-center text-4xl font-semibold md:text-5xl lg:text-6xl leading-tight lg:sticky lg:text-left text-gray-900 dark:text-white">
               Beyond Development We Deliver <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">Transformation</span>
             </h2>
           </RevealAnimation>
 
           {/* bar  */}
-          <RevealAnimation delay={0.1}>
+          <RevealAnimation delay={0.2}>
             <div className="bg-gradient-to-b from-blue-500 to-blue-600 sticky top-[156px] hidden h-[564px] w-px lg:block" />
           </RevealAnimation>
 
           {/* cards  */}
           <RevealAnimation delay={0.2}>
-            <div className="space-y-1 lg:space-y-3 xl:space-y-18">
+            <div className="space-y-10 lg:space-y-18 xl:space-y-18">
               {stepsData.map((step) => (
                 <StepCard
                   key={step.id}

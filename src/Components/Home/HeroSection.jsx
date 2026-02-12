@@ -5,10 +5,10 @@ import SpotLight from '.././ui/SpotLight'
 import LinkButton from '../ui/button/LinkButton'
 function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full bg-white dark:bg-gray-950 pt-32 pb-20 px-4">
+    <section className="relative min-h-[80vh] md:min-h-screen w-screen overflow-x-hidden bg-white dark:bg-gray-950 pt-24 sm:pt-32 pb-12 sm:pb-20 px-4">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90 dark:to-gray-950/90" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -27,7 +27,7 @@ function HeroSection() {
             {/* Main Heading */}
             <RevealAnimation direction="up" delay={0.4} offset={100}>
               <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl xl:text-7xl max-w-[10rem] lg:max-w-[25rem] font-bold leading-[0.8] text-gray-900 dark:text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-full sm:max-w-md lg:max-w-[25rem] font-bold leading-tight sm:leading-[0.9] lg:leading-[0.8] text-gray-900 dark:text-white">
                   Innovate.
                   <br />
                   <span className="text-blue-600">Integrate.</span>
@@ -39,7 +39,7 @@ function HeroSection() {
 
             {/* Description */}
             <RevealAnimation direction="up" delay={0.5} offset={60}>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-full sm:max-w-lg">
                 Transform your business with cutting-edge technology solutions. We deliver enterprise-grade software, banking systems, and IT services that drive measurable results.
               </p>
             </RevealAnimation>
@@ -64,13 +64,13 @@ function HeroSection() {
 
             {/* Trust Indicators */}
             <RevealAnimation direction="up" delay={0.7} offset={60}>
-              <div className="flex flex-wrap items-center gap-6 pt-8 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 sm:pt-8 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                   <span>ISO 9001:2015 Certified</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                   <span>CMMI Level 3</span>
                 </div>
               </div>

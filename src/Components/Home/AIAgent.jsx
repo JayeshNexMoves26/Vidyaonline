@@ -57,7 +57,7 @@ const AIAgent = () => {
 
     }, []);
   return (
-    <section className="pt-8 pb-8 sm:pt-12 sm:pb-12 md:pt-16 md:pb-16 w-full sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-full mx-auto lg:pt-[88px] lg:pb-[88px] xl:pt-[100px] xl:pb-[100px]">
+    <section className="pt-8 pb-8 sm:pt-12 sm:pb-12 md:pt-16 md:pb-16 w-[86%] sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-full mx-auto lg:pt-[88px] lg:pb-[88px] xl:pt-[100px] xl:pb-[100px]">
       <RevealAnimation delay={0.1}>
         <div className="relative">
           <div ref={boxRef} className="bg-black dark:bg-background-8 relative -z-0 mx-4 sm:mx-5 max-w-[1290px] overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-4xl py-10 sm:py-16 md:py-20 lg:py-28 text-center lg:py-28 xl:mx-auto 2xl:max-w-[1440px]">

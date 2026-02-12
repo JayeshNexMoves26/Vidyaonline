@@ -42,7 +42,7 @@ const LinkButton = ({ className, href, children, ariaLabel, ...linkProps }) => {
   return (
     <div
       ref={wrapperRef}
-      className={cn('w-fit cursor-pointer rounded-2xl px-1 py-1', className)}
+      className={cn('w-fit cursor-pointer rounded-2xl px-1 py-1 overflow-hidden', className)}
       aria-label={ariaLabel}
       data-button-v3
       onMouseEnter={handleMouseEnter}

@@ -5,7 +5,7 @@ const StepCard = ({ step, cardRef }) => {
     <div
       ref={cardRef}
       id={step.id}
-      className="step-card relative mx-auto w-[320px] shrink-0 overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black border border-gray-200 dark:border-gray-800 p-6 sm:w-[380px] md:w-[440px] xl:w-[480px] shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="step-card relative mx-auto w-80 shrink-0 overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black border border-gray-200 dark:border-gray-800 p-6 sm:w-96 md:w-[440px] xl:w-[480px] shadow-lg hover:shadow-xl transition-shadow duration-300"
       data-step={step.stepNumber}>
       {/* Inner card with border - simulating the screenshot/preview */}
       <div className="relative overflow-hidden rounded-2xl border-2 border-blue-500/30 bg-white dark:bg-gray-900 p-6 shadow-sm">

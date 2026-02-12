@@ -137,27 +137,27 @@ function Expertise() {
   }, [setIsDarkMode]);
 
   return (
-    <section ref={sectionRef} className="py-[80px] md:py-[120px] lg:py-[156px] bg-transparent relative overflow-hidden transition-colors duration-700">
+    <section ref={sectionRef} className="py-8 sm:py-12 md:py-[120px] lg:py-[156px] bg-transparent relative overflow-hidden transition-colors duration-700">
       {/* Background elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-10 sm:top-20 right-0 w-32 sm:w-64 md:w-96 h-32 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 sm:bottom-20 left-0 w-32 sm:w-64 md:w-96 h-32 sm:h-64 md:h-96 bg-blue-500/5 rounded-full blur-3xl" />
 
       <div className="main-container relative z-10">
         {/* Header */}
         <RevealAnimation delay={0.1}>
-          <div className="text-center space-y-6 mb-16">
-            <span className="inline-block px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-xs font-semibold text-blue-700 dark:text-blue-300 tracking-widest uppercase border border-blue-100 dark:border-blue-900">
+          <div className="text-center space-y-4 sm:space-y-6 mb-8 sm:mb-12 md:mb-16 px-4">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-xs font-semibold text-blue-700 dark:text-blue-300 tracking-widest uppercase border border-blue-100 dark:border-blue-900">
               Technical Expertise
             </span>
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <div className="space-y-2 sm:space-y-4">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight sm:leading-snug">
                 Deep Technical Expertise,
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-blue-600">
                   Supporting Modern Systems
                 </span>
               </h2>
-              <p className="mx-auto max-w-[700px] text-base md:text-lg text-gray-600 dark:text-gray-400">
+              <p className="mx-auto max-w-full sm:max-w-[700px] text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 px-2 sm:px-0">
                 We deliver enterprise-grade solutions across AI, cloud, security, and emerging technologies that drive measurable business outcomes.
               </p>
             </div>
@@ -165,7 +165,7 @@ function Expertise() {
         </RevealAnimation>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[220px] mx-4 md:mx-8 lg:mx-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[220px] px-2 sm:px-4 md:mx-8 lg:mx-12">
           {expertiseData.map((item, index) => {
             const Icon = item.icon;
             const delay = 0.2 + index * 0.05;
@@ -197,14 +197,14 @@ const ExpertiseCard = ({ item, Icon }) => {
   const getSizeClasses = () => {
     switch (item.size) {
       case 'wide-tall':
-        return 'md:col-span-2 md:row-span-2';
+        return 'sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2';
       case 'wide':
-        return 'md:col-span-2 md:row-span-1';
+        return 'sm:col-span-2 sm:row-span-1 lg:col-span-2 lg:row-span-1';
       case 'tall':
-        return 'md:col-span-1 md:row-span-2';
+        return 'sm:col-span-1 sm:row-span-2 lg:col-span-1 lg:row-span-2';
       case 'normal':
       default:
-        return 'md:col-span-1 md:row-span-1';
+        return 'sm:col-span-1 sm:row-span-1';
     }
   };
 
@@ -230,7 +230,7 @@ const ExpertiseCard = ({ item, Icon }) => {
   };
 
   return (
-    <div className={`${getSizeClasses()} relative h-full rounded-2xl border p-2`}>
+    <div className={`${getSizeClasses()} relative h-full rounded-lg sm:rounded-2xl border p-1 sm:p-2`}>
       <GlowingEffect
         spread={40}
         glow={true}
@@ -240,21 +240,21 @@ const ExpertiseCard = ({ item, Icon }) => {
       />
       <div
         className={`
-          relative h-full flex flex-col justify-between rounded-xl p-6
+          relative h-full flex flex-col justify-between rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6
           ${getThemeClasses()}
           overflow-hidden
         `}
       >
-        <div className="relative z-10  space-y-4">
+        <div className="relative z-10 space-y-2 sm:space-y-3 md:space-y-4">
           {/* Icon */}
-          <div className={`w-12 h-12 rounded-xl ${getIconBgClasses()} flex items-center justify-center`}>
-            <Icon className={`w-6 h-6 ${getIconColorClasses()}`} />
+          <div className={`w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-lg sm:rounded-xl ${getIconBgClasses()} flex items-center justify-center shrink-0`}>
+            <Icon className={`w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 ${getIconColorClasses()}`} />
           </div>
 
           {/* Content */}
-          <div className="space-y-2">
-            <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
-            <p className={`text-xs leading-relaxed ${item.theme === 'dark' || item.theme === 'blue' ? 'text-gray-300' : 'text-gray-600 dark:text-gray-400'}`}>
+          <div className="space-y-1 sm:space-y-1.5 md:space-y-2">
+            <h3 className="text-sm sm:text-base md:text-xl font-bold tracking-tight line-clamp-2">{item.title}</h3>
+            <p className={`text-xs sm:text-xs md:text-xs leading-snug md:leading-relaxed line-clamp-2 md:line-clamp-none ${item.theme === 'dark' || item.theme === 'blue' ? 'text-gray-300' : 'text-gray-600 dark:text-gray-400'}`}>
               {item.description}
             </p>
           </div>

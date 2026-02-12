@@ -191,7 +191,11 @@ function CaseStudies() {
 
   return (
     <RevealAnimation>
-      <section className="relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] xl:min-h-[100vh] overflow-hidden">
+      <section className={`relative overflow-hidden transition-all duration-500 ease-in-out ${
+        isExpanded 
+          ? 'h-[80vh] sm:h-[70vh] md:h-[100vh]' 
+          : 'h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]'
+      }`}>
         <div className="main-container relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-20 lg:py-20">
         <div className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[640px] lg:min-h-[640px]">
           {/* Image Section */}
@@ -224,7 +228,7 @@ function CaseStudies() {
           {/* Titles Section */}
           <div
             ref={titlesContainerRef}
-            className="absolute mt-6 sm:mt-8 md:mt-10 w-full sm:max-w-sm md:max-w-md lg:max-w-md"
+            className="absolute mt-6 sm:mt-8 md:mt-10 mr-4 sm:mr-6 md:mr-6 w-auto max-w-[45%] sm:max-w-[50%] md:max-w-max lg:w-[25rem] lg:max-w-md"
             style={{ right: 0, bottom: 0, textAlign: 'right' }}
           >
             {!isExpanded && (
@@ -234,7 +238,7 @@ function CaseStudies() {
               </div>
             )}
 
-            <div className="mt-4 sm:mt-5 md:mt-6 space-y-2 sm:space-y-3 md:space-y-4">
+            <div className="mt-4 sm:mt-5 md:mt-6 px-1 space-y-1 sm:space-y-1 md:space-y-2">
               {caseStudiesData.map((study, index) => {
                 const isActive = index === activeIndex;
 
@@ -265,42 +269,42 @@ function CaseStudies() {
           {/* Description & Buttons - Show only when expanded */}
           <div
             ref={detailsRef}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl text-center pointer-events-none z-50"
+            className="absolute left-1/2 md:top-1/2 top-[30%] -translate-1/4 -translate-x-1/2 md:-translate-y-1/2  w-full max-w-2xl text-center pointer-events-none z-50"
             style={{ opacity: 0 }}
           >
+            {/* Close Button - Top Right */}
+            <button
+              onClick={handleClose}
+              className="absolute -top-[19rem] right-4 sm:right-6 md:-top-[29rem] md:right-1 p-2 cursor-pointer text-gray-600 hover:text-gray-900 rounded-full hover:bg-gray-100 bg-gray-50 transition-all duration-200 pointer-events-auto"
+              aria-label="Close"
+            >
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+
             {/* Divider */}
             <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-8"></div>
 
             {/* Description */}
-            <p className="text-gray-600 text-left pl-6 sm:pl-10 md:pl-16 text-sm sm:text-base leading-tight mb-6 sm:mb-8 px-4 sm:px-6\">
+            <p className="text-gray-600 text-left pl-6 sm:pl-10 md:pl-16 text-sm sm:text-base leading-tight mb-6 sm:mb-8 px-4 sm:px-6">
               {activeStudy.description}
             </p>
 
             {/* Call to action */}
-            <p className="text-gray-500 text-left pl-6 sm:pl-10 md:pl-16 text-xs sm:text-sm mb-6 sm:mb-8 px-4 sm:px-6\">
+            <p className="text-gray-500 text-left pl-6 sm:pl-10 md:pl-16 text-xs sm:text-sm mb-6 sm:mb-8 px-4 sm:px-6">
               Want to create something cool together? Let's do it!
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 justify-start pl-6 sm:pl-10 md:pl-16 px-4 sm:px-6\">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 justify-start pl-6 sm:pl-10 md:pl-16 px-4 sm:px-6">
               <LinkButton
                 href={activeStudy.livePreviewUrl}
-                className="bg-gray-100 text-gray-900 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+                className="bg-gray-100 text-gray-900 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors duration-200 pointer-events-auto"
               >
                 <span className="font-medium">Live Preview</span>
               </LinkButton>
-              <button
-                onClick={handleClose}
-                className="px-8 py-4 cursor-pointer text-black/60 rounded-xl font-medium transition-colors duration-200 flex items-center justify-center gap-2"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <line x1="12" y1="19" x2="5" y2="12" />
-                  <line x1="12" y1="5" x2="5" y2="12" />
-                </svg>
-                <span> Back to Projects</span>
-
-              </button>
             </div>
           </div>
         </div>

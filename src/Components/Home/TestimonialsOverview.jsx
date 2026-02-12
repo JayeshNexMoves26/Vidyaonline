@@ -55,14 +55,14 @@ const TestimonialsOverview = () => {
   return (
     <section className="pb-14 md:pb-16 lg:pb-22 xl:pb-50">
       <RevealAnimation delay={0.1}>
-        <div className="mx-auto max-w-360 rounded-2xl bg-background-3 py-20 dark:bg-background-7 md:py-25">
+        <div className="mx-auto max-w-7xl rounded-2xl py-20 md:py-25">
           <div className="main-container">
-            <div className="flex flex-col items-start gap-y-24 md:gap-x-35 md:flex-row">
+            <div className="flex flex-col items-start gap-y-32 md:gap-x-35 md:flex-row">
               <StackCardWrapper
                 topOffset="15vh"
                 gap="24px"
                 initDelay={100}
-                className="mx-auto w-full max-w-90 md:max-w-96 md:flex-col lg:mx-0 lg:max-w-full lg:flex-1">
+                className="mx-4 md:mx-auto w-full max-w-sm md:max-w-md lg:mx-0 lg:max-w-full lg:flex-1">
                 {testimonialsData.map((testimonial) => (
                   <StackCardItem key={testimonial.id}>
                     <div className="flex h-full flex-col items-start space-y-6 bg-black/60 rounded-2xl backdrop-blur-md dark:bg-black/80 p-8 shadow-sm border border-white/20 hover:shadow-lg transition-shadow duration-300">
@@ -71,7 +71,7 @@ const TestimonialsOverview = () => {
                           <span key={i} className="text-yellow-400 text-lg">★</span>
                         ))}
                       </div>
-                      <p className="text-base text-gray-300 leading-relaxed italic">
+                      <p className="text-base text-gray-300 dark:text-gray-300 leading-relaxed italic">
                         "{testimonial.testimonial}"
                       </p>
                       <div className="flex items-center gap-4 pt-2">
@@ -79,8 +79,8 @@ const TestimonialsOverview = () => {
                           {testimonial.avatar}
                         </div>
                         <div>
-                          <h3 className="text-base font-semibold text-gray-900 dark:text-white">{testimonial.name}</h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                          <h3 className="text-base font-semibold text-white">{testimonial.name}</h3>
+                          <p className="text-sm text-gray-300">
                             {testimonial.role} at {testimonial.company}
                           </p>
                         </div>
@@ -89,20 +89,20 @@ const TestimonialsOverview = () => {
                   </StackCardItem>
                 ))}
               </StackCardWrapper>
-              <div className="w-full lg:sticky lg:top-32 space-y-10 lg:flex-1 flex flex-col lg:items-end">
+              <div className="w-full lg:sticky lg:top-32 space-y-10 lg:flex-1 flex flex-col items-start lg:items-end">
                 <RevealAnimation delay={0.3}>
-                  <span className="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
+                  <span className="inline-block px-4 py-2 mx-4 md:mx-0 w-[9.5rem] bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
                     Client testimonials
                   </span>
                 </RevealAnimation>
                 <div className="space-y-6 max-w-xl">
                   <RevealAnimation delay={0.4}>
-                    <h2 className="text-4xl md:text-5xl text-right lg:text-6xl font-bold text-gray-900 dark:text-white leading-[0.9]">
+                    <h2 className="text-4xl md:text-5xl mx-4 text-left md:text-right lg:text-6xl font-bold text-gray-900 dark:text-white leading-[0.9]">
                       Trusted by businesses worldwide.
                     </h2>
                   </RevealAnimation>
                   <RevealAnimation delay={0.5}>
-                    <p className="text-lg text-gray-600 text-right dark:text-gray-400 leading-relaxed">
+                    <p className="text-lg text-gray-600 mx-4 text-left md:text-right dark:text-gray-400 leading-relaxed">
                       Don't just take our word for it. Hear what our clients have to say about their experience working with us.
                     </p>
                   </RevealAnimation>
@@ -111,7 +111,7 @@ const TestimonialsOverview = () => {
                   <div>
                     <LinkButton
                       href="/case-studies"
-                      className="bg-transparent text-gray-900 dark:text-white rounded-xl border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white transition-all duration-300 hover:shadow-lg"
+                      className="bg-transparent mx-4 text-gray-900 dark:text-white rounded-xl border border-gray-300 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white transition-all duration-300 hover:shadow-lg"
                     >
                       <span className="font-semibold">View case studies</span>
                     </LinkButton>
